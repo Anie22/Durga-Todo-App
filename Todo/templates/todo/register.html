@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durga Todo List App</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% block content %}
+        <div class="user-header-holder">
+            <div class="login-user">
+                <h2 class="h2">Welcome to Durga Todo List App</h2>
+                <p>Please create an account</p>
+            </div>
+        </div>
+        <div class="login">
+            <form action="" method="post">
+                {% csrf_token %}
+                <label>{{form.username.label}}</label>
+                {{form.username}}
+
+                <label>{{form.password1.label}}</label>
+                {{form.password1}}
+
+                <label>{{form.password2.label}}</label>
+                {{form.password2}}
+                <p class="p">Already have an account <a href="{% url 'login' %}">Login</a></p>
+                <button type="submit">Signup</button>
+            </form>
+        </div>
+        {% endblock content %}
+    </div>
+</body>
+</html>

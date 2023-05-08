@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 50px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: #fffefe;
+    box-shadow: 7px 7px 17px -7px rgb(145, 142, 142);
+    border-radius: 16px;
+    border: 1px solid #000;
+}
+
+.user-header-holder{
+    background-color: rgb(248, 36, 213);
+    padding: 12px;
+    margin-bottom: 5px;
+    border-radius: 16px 16px 0 0;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user h2{
+    font-size: 35px;
+    font-weight: 100;
+}
+@media screen and (max-width: 425px) {
+    .user h2{
+        font-size: 30px;
+    }
+    .user p{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .user p{
+        font-size: 12.5px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .user h2{
+        font-size: 20px;
+    }
+    .user p{
+        font-size: 10.3px;
+    }
+}
+
+.user>a{
+    text-decoration: none;
+    font-size: 19px;
+    color: #fffefe;
+}
+@media screen and (max-width: 425px) {
+    .user>a{
+       font-size: 15px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .user>a{
+       font-size: 12px;
+    }
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px;
+}
+
+input[type=text]{
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+    padding: 10px;
+}
+@media screen and (max-width: 425px) {
+    input[type=text]{
+        width: 150px;
+    }
+}
+@media screen and (max-width: 375px) {
+    input[type=text]{
+        width: 100px;
+    }
+}
+@media screen and (max-width: 320px) {
+    input[type=text]{
+        width: 90px;
+    }
+}
+
+button[type=submit]{
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    color: #fffefe;
+    background-color: rgb(33, 125, 231);
+    border: none;
+    outline: none;
+}
+@media screen and (max-width: 320px) {
+    button[type=submit]{
+        width: 40px;
+        font-size: 11px;
+    }
+}
+
+.search a{
+    font-size: 30px;
+    text-decoration: none;
+    color: rgb(33, 125, 231);
+    text-shadow: 1px 1px rgb(33, 125, 231);
+}
+
+.task-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fffefe;
+    border-top: 1px solid rgb(226, 226, 226);
+    border-radius: 0 0 16px 16px;
+}
+
+.task-title{
+    display: flex;
+}
+
+.task-title a{
+    text-decoration: none;
+    color: #4b5156;
+    margin-left: 10px;
+}
+
+.task-complete-icon{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(105, 192, 105);
+    border-radius: 50%;
+}
+
+.task-incomplete-icon{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(220, 228, 220);
+    border-radius: 50%;
+}
+
+.delete-link{
+    text-decoration: none;
+    font-weight: 600;
+    color: #cf4949;
+    font-size: 24px;
+    line-height: 0;
+}
+
+.login-user{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-user h2{
+    font-size: 22px;
+}
+@media screen and (max-width: 425px) {
+    .login-user h2{
+       font-size: 18px;
+    }
+    .login-user .h2{
+        font-size: 16px;
+    }
+    .login-user p{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .login-user h2{
+       font-size: 14.1px;
+    }
+    .login-user .h2{
+        font-size: 15px;
+    }
+    .login-user p{
+        font-size: 12.5px;
+    }
+}
+
+.login{
+    padding: 22px;
+}
+@media screen and (max-width: 425px) {
+    .login .p{
+        font-size: 13px;
+    }
+}
+
+
+.login input[type=password],
+.login textarea{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+    padding: 10px;
+}
+
+textarea{
+    resize: none;
+}
+
+.login input[type=text]{
+    width: 100%;
+    padding: 17px;
+}
+
+label{
+    padding-top: 10px !important;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.login button{
+    display: flex;
+    width: 100%;
+    padding: 17px;
+    margin-top: 12px;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.p{
+    text-align: right;
+    margin-top: 7px;
+}
+@media screen and (max-width: 320px) {
+    .p{
+       font-size: 10.2px;
+    }
+}
+
+.p a{
+    text-decoration: none;
+    color: rgb(33, 125, 231);
+}
+
+.card-body{
+    padding: 20px;
+}
+
+a.rejex{
+    font-size: 37px;
+}
+
+form {
+    padding: 15px;
+}
+@media screen and (max-width: 425px) {
+    form{
+       padding: 9px;
+    }
+}
+@media screen and (max-width: 320px) {
+    form label{
+       font-size: 15px;
+    }
+}
+
+.button{
+    margin-top: 12px;
+}
+
+.plus{
+    margin-right: 12px;
+}
+
+.no-list{
+    padding: 12px;
+    border-top: 1px solid rgb(226, 226, 226);
+}
