@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durga Todo App</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="first-section">
+        <div class="inner-section">
+            {% block body %}
+            <header class="header">
+                <nav>
+                    <div class="logo">Durga</div>
+                    <ul>
+                        {% if request.user.is_authenticated %}
+                        <div class="dropdown">
+                            <h2>Hello <span>{{request.user|title}}</span></h2>
+                            <div class="drb">
+                                <div class="dropbtn arrow down" onclick="toggleBtn()"></div>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <li><a href="{% url 'tasks' %}">My Todo</a></li>
+                                    <li><a href="{% url 'task-create' %}">Create Todo</a></li>
+                                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                                </div>
+                            </div>
+                        </div>
+                        {% else %}
+                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a href="{% url 'signup' %}">SignUp</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </header>
+            <div class="inner">
+                <div class="text">
+                    <h3>Durga Todo App</h3>
+                    <p>An app that enable you to create a list of what you intend to do for the day or the do next week</p>
+                </div>
+                <div class="img">
+                    <img src="{% static './img/bozz.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+        <footer>
+            <div class="black">
+                <p>&copy; 2023 Copyright coded by Aniebiet</p>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="{% static './js/todo.js' %}"></script>
+</html>

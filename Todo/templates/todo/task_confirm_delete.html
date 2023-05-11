@@ -9,17 +9,29 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div class="container">
-        <div class="user-header-holder">
-            <div class="user">
-                <a class="rejex" href="{% url 'tasks' %}">&#8592</a>
+    <div class="task-section">
+        <div class="task">
+            <header class="task-header">
+                <p class="link"><a href="{% url 'home' %}">Home</a></p>
+            </header>
+            <div class="con-container">
+                <div class="user-header-holder">
+                    <div class="user">
+                        <a class="rejex" href="{% url 'tasks' %}">&#8592</a>
+                    </div>
+                </div>
+                <form method="post">
+                    {% csrf_token %} 
+                    <p>Are you sure you want to  delete this task? "{{tasks}}"</p>
+                    <button class="button" type="submit">Yes</button>
+                </form>
             </div>
         </div>
-        <form method="post">
-            {% csrf_token %} 
-            <p>Are you sure you want to  delete this task? "{{tasks}}"</p>
-            <button class="button" type="submit">Yes</button>
-        </form>
+        <footer>
+            <div class="form-footer">
+                <p>&copy; 2023 Copyright coded by Aniebiet</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

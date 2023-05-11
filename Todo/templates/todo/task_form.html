@@ -9,19 +9,31 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div class="container">
-        <div class="user-header-holder">
-            <div class="user">
-                <a class="rejex" href="{% url 'tasks' %}">&#8592</a>
+    <div class="task-section">
+        <div class="task">
+            <header class="task-header">
+                <p class="link"><a href="{% url 'home' %}">Home</a></p>
+            </header>
+            <div class="form-container">
+                <div class="user-header-holder">
+                    <div class="user">
+                        <a class="rejex" href="{% url 'tasks' %}">&#8592</a>
+                    </div>
+                </div>
+                <div class="login">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <button type="submit">Create</button>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="login">
-            <form action="" method="post">
-                {% csrf_token %}
-                {{form.as_p}}
-                <button type="submit">Create</button>
-            </form>
-        </div>
+        <footer>
+            <div class="form-footer">
+                <p>&copy; 2023 Copyright coded by Aniebiet</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

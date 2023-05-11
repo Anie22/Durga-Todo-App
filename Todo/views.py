@@ -13,19 +13,22 @@ from .models import Task
 
 # Create your views here.
 
+def home(request):
+    return render(request, "todo/index.html")
+
 class DurgaLoginView(LoginView):
     template_name = 'todo/login.html'
     fields = '__all__'
     redirect_authenticated_user = True
 
     def get_success_url(self):
-        return reverse_lazy('tasks')
+        return reverse_lazy('home')
 
 class RegisterPage(FormView):
     template_name = 'todo/register.html'
     form_class = UserCreationForm
     redirect_authenticated_user = True
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('home')
 
     def form_valid(self, form):
         user = form.save()
@@ -35,7 +38,7 @@ class RegisterPage(FormView):
 
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
-            return redirect('tasks')
+            return redirect('home')
         return super(RegisterPage, self).get(*args, **kwargs)
 
 class TaskList(LoginRequiredMixin, ListView):

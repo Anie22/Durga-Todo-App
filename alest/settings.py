@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_3u%(-ywr#tti0oj+u2vo%310&=jed!h#au1hkz(s=bhs)fbir
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app']
 
 
 # Application definition
@@ -37,9 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'home.apps.HomeConfig',
     'Todo.apps.TodoConfig'
-    # 'Drafto_Calculator',
 ]
 
 MIDDLEWARE = [
