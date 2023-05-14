@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Durga Todo App</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static './css/style.css' %}">
 </head>
 <body>
     <div class="first-section">
@@ -15,30 +15,44 @@
             <header class="header">
                 <nav>
                     <div class="logo">Durga</div>
-                    <ul>
-                        {% if request.user.is_authenticated %}
-                        <div class="dropdown">
-                            <h2>Hello <span>{{request.user|title}}</span></h2>
-                            <div class="drb">
-                                <div class="dropbtn arrow down" onclick="toggleBtn()"></div>
-                                <div id="myDropdown" class="dropdown-content">
-                                    <li><a href="{% url 'tasks' %}">My Todo</a></li>
-                                    <li><a href="{% url 'task-create' %}">Create Todo</a></li>
-                                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                                </div>
+                    <div class="hamburger">
+                        <div class="bar-holder">
+                            <div class="bar">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
                             </div>
                         </div>
-                        {% else %}
-                        <li><a href="{% url 'login' %}">Login</a></li>
-                        <li><a href="{% url 'signup' %}">SignUp</a></li>
-                        {% endif %}
-                    </ul>
+                        <div class="nav hidden">
+                            <ul class="tweet">
+                                <div class="close" id="close">&times;</div>
+                                {% if request.user.is_authenticated %}
+                                <div class="dropdown">
+                                    <li><a href="{% url 'tasks' %}">My Todo</a></li>
+                                    <li><a href="{% url 'task-create' %}">Create Todo</a></li>
+                                    <div class="drb">
+                                        <h2>Hello <span>{{request.user|title}}</span></h2>
+                                        <div class="dropbtn arrow down" onclick="toggleBtn()"></div>
+                                        <div id="myDropdown" class="dropdown-content">
+                                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% else %}
+                                <li><a href="{% url 'tasks' %}">My Todo</a></li>
+                                <li><a href="{% url 'task-create' %}">Create Todo</a></li>
+                                <li><a href="{% url 'login' %}">Login</a></li>
+                                <li><a href="{% url 'signup' %}">SignUp</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
                 </nav>
             </header>
             <div class="inner">
                 <div class="text">
                     <h3>Durga Todo App</h3>
-                    <p>An app that enable you to create a list of what you intend to do for the day or the do next week</p>
+                    <p>An app that enable you to create a list of what you intend to do for the day or the do next week. SignUp to start creating a list of what you want to do.</p>
                 </div>
                 <div class="img">
                     <img src="{% static './img/bozz.png' %}" alt="">
@@ -48,10 +62,10 @@
         {% endblock %}
         <footer>
             <div class="black">
-                <p>&copy; 2023 Copyright coded by Aniebiet</p>
+                <p>&copy; Copyright 2023 coded by Aniebiet</p>
             </div>
         </footer>
     </div>
 </body>
-<script src="{% static './js/todo.js' %}"></script>
+<script src="{% static './js/index.js' %}"></script>
 </html>

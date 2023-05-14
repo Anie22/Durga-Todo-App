@@ -7,54 +7,58 @@
 }
 
 body {
-    /* padding: 50px; */
     font-family: 'Space Grotesk', sans-serif;
 }
 
-.container {
-    width: 50%;
-    margin: 75.3px;
-    background: #fffefe;
-    box-shadow: 7px 7px 17px -7px rgb(145, 142, 142);
-    border-radius: 16px;
-    border: 1px solid #000;
+.hidden{
+    display: none;
 }
 
-.task-container {
-    width: 50%;
-    margin: 140px;
-    background: #fffefe;
-    box-shadow: 7px 7px 17px -7px rgb(145, 142, 142);
-    border-radius: 16px;
-    border: 1px solid #000;
+.show {
+    display: block !important;
 }
 
-.reg-container {
-    width: 50%;
-    margin: 38px;
-    background: #fffefe;
-    box-shadow: 7px 7px 17px -7px rgb(145, 142, 142);
-    border-radius: 16px;
-    border: 1px solid #000;
+.none{
+    display: none !important;
+}
+@media screen and (max-width: 768px) {
+    .none{
+        display: block !important;
+    }
 }
 
-.con-container {
-    width: 50%;
-    margin: 178.3px;
-    background: #fffefe;
-    box-shadow: 7px 7px 17px -7px rgb(145, 142, 142);
-    border-radius: 16px;
-    border: 1px solid #000;
+.user-header-holder{
+    background-color: rgb(248, 36, 213);
+    padding: 12px;
+    margin-bottom: 5px;
+    border-radius: 16px 16px 0 0;
 }
 
-.form-container {
-    width: 50%;
-    margin: 17.5px;
-    background: #fffefe;
-    box-shadow: 7px 7px 17px -7px rgb(145, 142, 142);
-    border-radius: 16px;
-    border: 1px solid #000;
+.tsk{
+    padding: 20px;
 }
+
+.task-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 12px;
+}
+
+.line{
+    background: #f1efef;
+    height: 5.3px;
+    width: 35px;
+}
+
+.card-body{
+    padding: 20px;
+}
+
+/*
+    index Section
+*/
 
 .first-section{
     background-image: url(../img/pexels-kaboompics-com-6337.jpg);
@@ -67,11 +71,17 @@ body {
     flex-direction: column;
     align-items: center;
     background: hsla(0, 0%, 11%, 0.637);
+    width: 100%;
 }
 
 .header{
     width: 100%;
     padding: 15px 25px;
+}
+@media screen and (max-width: 320px) {
+    .header{
+        padding: 15px 11px;
+    }
 }
 
 .header nav{
@@ -86,6 +96,137 @@ body {
     font-style: italic;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 30px;
+    color: #fffefe;
+}
+
+.hamburger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+@media screen and (max-width: 1024px) {
+    .hamburger{
+        flex-direction: row;
+    }
+}
+@media screen and (max-width: 768px) {
+    .hamburger{
+        flex-direction: column;
+    }
+}
+
+.bar{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 3px;
+}
+
+.close {
+    font-size: 50px;
+}
+@media screen and (max-width: 768px) {
+    .close {
+        padding-left: 250px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .close {
+        padding-left: 166px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .close {
+        padding-left: 110px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .close {
+        padding-left: 110px;
+    }
+}
+
+.bar-holder,
+.close{
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .bar-holder,
+    .close{
+        display: block;
+    }
+}
+
+.tweet{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-right: 12px;
+}
+@media screen and (min-width: 1024px) {
+    .nav{
+        display: block;
+    }
+}
+@media screen and (max-width: 768px) {
+    .nav{
+        position: fixed;
+        background: #bebebeaf;
+        width: 70%;
+        height: 110%;
+        margin: -75px 302px -389px -150px;
+    }
+    .tweet{
+        position: absolute;
+        padding: 25px;
+        background: #000;
+        height: inherit;
+        align-items: baseline;
+        width: 90%;
+        left: 199px;
+        flex-direction: column;
+        z-index: 3;
+    }
+}
+@media screen and (max-width: 425px) {
+    .nav{
+        width: 60%;
+    }
+    .tweet{
+        left: 166px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .nav{
+        width: 52%;
+    }
+    .tweet{
+        left: 192px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .nav{
+        width: 70%;
+    }
+    .tweet{
+        width: 100%;
+    }
+}
+
+.tweet li{
+    list-style: none;
+}
+@media screen and (max-width: 768px) {
+    .tweet li{
+        border-bottom: 1px solid red;
+        padding: 12px 0;
+    }
+}
+
+.tweet li>a{
+    text-decoration: none;
+    color: #fffefe;
 }
 
 .dropdown{
@@ -94,6 +235,12 @@ body {
     justify-content: center;
     gap: 20px;
     position: relative;
+}
+@media screen and (max-width: 768px) {
+    .dropdown{
+        align-items: baseline;
+        flex-direction: column;
+    }
 }
 
 .dropdown h2{
@@ -107,9 +254,20 @@ body {
     padding: 12px;
     min-width: 230px;
     top: 2.3em;
-    left: -3.2em;
+    left: 7em;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+}
+@media screen and (max-width: 768px) {
+    .dropdown-content{
+       display: block;
+       background: none;
+       min-width: 100px;
+       left: -12px;
+       right: 15em;
+       top: 8em;
+       z-index: 0;
+    }
 }
 
 .dropdown-content li{
@@ -117,8 +275,10 @@ body {
     padding: 12px 0;
 }
 
-.show {
-    display: block !important;
+.drb{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .arrow {
@@ -127,26 +287,15 @@ body {
     display: inline-block;
     padding: 4px;
 }
+@media screen and (max-width: 768px) {
+    .arrow{
+        display: none;
+    }
+}
 
 .down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-}
-
-.header nav>ul{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-right: 12px;
-}
-
-.header nav>ul li{
-    list-style: none;
-}
-
-.header nav>ul li>a{
-    text-decoration: none;
-    color: #fffefe;
 }
 
 .inner{
@@ -155,7 +304,17 @@ body {
     justify-content: center;
     gap: 60px;
     width: 100%;
-    margin: 100px 0;
+    margin: 120px 0;
+}
+@media screen and (max-width: 768px) {
+    .inner{
+        padding: 0 12px 0 12px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .inner{
+        flex-direction: column;
+    }
 }
 
 .text{
@@ -163,7 +322,28 @@ body {
     color: #fffefe;
     width: 30em;
 }
-
+@media screen and (max-width: 768px) {
+    .text{
+        width: 28em;
+        padding: 4px 2px 4px 0px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .text{
+        width: 25em;
+    }
+}
+@media screen and (max-width: 375px) {
+    .text{
+        width: 21em;
+    }
+}
+@media screen and (max-width: 320px) {
+    .text{
+        width: 20em;
+        padding-left: 11px;
+    }
+}
 .text h3{
     font-size: 35px;
     margin-bottom: 12px;
@@ -173,9 +353,19 @@ body {
     font-size: 18px;
     letter-spacing: 1px;
 }
+@media screen and (max-width: 320px) {
+    .text p{
+        font-size: 14px;
+    }
+}
 
 .img{
     padding: 20px;
+}
+@media screen and (min-width: 320px) {
+    .img{
+        padding: 0px;
+    }
 }
 
 .img img{
@@ -198,6 +388,15 @@ body {
     text-align: center;
     color: #fffefe;
 }
+@media screen and (max-width: 320px) {
+    .black p{
+        font-size: 18px;
+    }
+}
+
+/*
+    Login Section
+*/
 
 .login-section{
     background-image: url(../img/pexels-kaboompics-com-6337.jpg);
@@ -211,6 +410,149 @@ body {
     flex-direction: column;
     height: fit-content;
     background: hsla(0, 0%, 11%, 0.685);
+}
+
+.log-bar{
+    display: flex;
+    align-items: center;
+}
+@media screen and (max-width: 768px) {
+    .log-bar{
+        flex-direction: column;
+    }
+    .log-btn{
+        display: none;
+        position: absolute;
+        background: #2b2b2bbb;
+        top: 2.7em;
+        right: 0px;
+        width: 100px;
+        z-index: 2;
+    }
+}
+
+.container {
+    width: 50%;
+    margin: 75.3px;
+    background: #fffefe;
+    box-shadow: 7px 7px 17px -7px rgb(145, 142, 142);
+    border-radius: 16px;
+    border: 1px solid #000;
+}
+@media screen and (max-width: 768px) {
+    .container{
+        width: 75%;
+    }
+}
+@media screen and (max-width: 425px) {
+    .container{
+        width: 90%;
+    }
+}
+
+.login-user{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-user h2{
+    font-size: 22px;
+}
+@media screen and (max-width: 425px) {
+    .login-user h2{
+       font-size: 18px;
+    }
+    .login-user .h2{
+        font-size: 16px;
+    }
+    .login-user p{
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .login-user h2{
+       font-size: 14.1px;
+    }
+    .login-user .h2{
+        font-size: 15px;
+    }
+    .login-user p{
+        font-size: 12.5px;
+    }
+}
+
+.login{
+    padding: 22px;
+}
+@media screen and (max-width: 425px) {
+    .login .p{
+        font-size: 13px;
+    }
+}
+
+.login input[type=text]{
+    width: 100%;
+    padding: 17px;
+}
+
+label{
+    padding-top: 10px !important;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.login button{
+    display: flex;
+    width: 100%;
+    padding: 17px;
+    margin-top: 12px;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.login input[type=password],
+.login textarea{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+    padding: 10px;
+}
+
+.form-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsla(0, 0%, 11%, 0.897);
+    width: 100%;
+    height: 90px;
+    padding: 12px;
+}
+
+.form-footer p{
+    font-size: 20px;
+    text-align: center;
+    color: #fffefe;
+}
+@media screen and (max-width: 320px) {
+    .form-footer p{
+        font-size: 18px;
+    }
+}
+
+/*
+ Register Section
+*/
+
+.reg-container {
+    width: 50%;
+    margin: 38px;
+    background: #fffefe;
+    box-shadow: 7px 7px 17px -7px rgb(145, 142, 142);
+    border-radius: 16px;
+    border: 1px solid #000;
 }
 
 .reg-section{
@@ -227,6 +569,35 @@ body {
     background: hsla(0, 0%, 11%, 0.685);
 }
 
+.link{
+    margin: 12px;
+    font-size: 20px;
+}
+
+.link a{
+    color: #fffefe;
+    text-decoration: none;
+}
+
+.p{
+    text-align: right;
+    margin-top: 7px;
+}
+@media screen and (max-width: 320px) {
+    .p{
+       font-size: 10.2px;
+    }
+}
+
+.p a{
+    text-decoration: none;
+    color: rgb(33, 125, 231);
+}
+
+/*
+    Task section
+*/
+
 .task-section{
     background-image: url(../img/pexels-kaboompics-com-6337.jpg);
     background-repeat: no-repeat;
@@ -241,25 +612,25 @@ body {
     background: hsla(0, 0%, 11%, 0.685);
 }
 
-.task-header{
-    width: 100%;
+.task-container {
+    width: 50%;
+    margin: 140px;
+    background: #fffefe;
+    box-shadow: 7px 7px 17px -7px rgb(145, 142, 142);
+    border-radius: 16px;
+    border: 1px solid #000;
 }
-
-.link{
-    margin: 12px;
-    font-size: 20px;
+@media screen and (max-width: 768px) {
+    .task-container{
+        width: 80%;
+        margin: 90px;
+    }
 }
-
-.link a{
-    color: #fffefe;
-    text-decoration: none;
-}
-
-.user-header-holder{
-    background-color: rgb(248, 36, 213);
-    padding: 12px;
-    margin-bottom: 5px;
-    border-radius: 16px 16px 0 0;
+@media screen and (max-width: 425px) {
+    .task-container{
+        width: 90%;
+        margin: 70px;
+    }
 }
 
 .user{
@@ -341,9 +712,9 @@ input[type=text]{
     }
 }
 
-button[type=submit]{
-    width: 60px;
-    height: 30px;
+button[type=submit] {
+    width: 85px;
+    height: 35px;
     border-radius: 5px;
     color: #fffefe;
     background-color: rgb(33, 125, 231);
@@ -362,6 +733,10 @@ button[type=submit]{
     text-decoration: none;
     color: rgb(33, 125, 231);
     text-shadow: 1px 1px rgb(33, 125, 231);
+}
+
+.plus{
+    margin-right: 12px;
 }
 
 .task-wrapper{
@@ -406,120 +781,28 @@ button[type=submit]{
     line-height: 0;
 }
 
-.login-user{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.no-list{
+    padding: 25px;
+    border-top: 1px solid rgb(226, 226, 226);
 }
 
-.login-user h2{
-    font-size: 22px;
+/*
+    form section
+*/
+
+.form-container {
+    width: 50%;
+    margin: 17.5px;
+    background: #fffefe;
+    box-shadow: 7px 7px 17px -7px rgb(145, 142, 142);
+    border-radius: 16px;
+    border: 1px solid #000;
 }
-@media screen and (max-width: 425px) {
-    .login-user h2{
-       font-size: 18px;
+@media screen and (max-width: 768px) {
+    .form-container{
+        width: 90%;
+        margin: 40px;
     }
-    .login-user .h2{
-        font-size: 16px;
-    }
-    .login-user p{
-        font-size: 15px;
-    }
-}
-@media screen and (max-width: 320px) {
-    .login-user h2{
-       font-size: 14.1px;
-    }
-    .login-user .h2{
-        font-size: 15px;
-    }
-    .login-user p{
-        font-size: 12.5px;
-    }
-}
-
-.login{
-    padding: 22px;
-}
-@media screen and (max-width: 425px) {
-    .login .p{
-        font-size: 13px;
-    }
-}
-
-
-.login input[type=password],
-.login textarea{
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid gray;
-    outline: none;
-    padding: 10px;
-}
-
-.form-footer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: hsla(0, 0%, 11%, 0.897);
-    width: 100%;
-    height: 90px;
-    padding: 12px;
-}
-
-.form-footer p{
-    font-size: 20px;
-    text-align: center;
-    color: #fffefe;
-}
-
-textarea{
-    resize: none;
-    height: 120px;
-}
-
-.login input[type=text]{
-    width: 100%;
-    padding: 17px;
-}
-
-label{
-    padding-top: 10px !important;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.login button{
-    display: flex;
-    width: 100%;
-    padding: 17px;
-    margin-top: 12px;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-}
-
-.p{
-    text-align: right;
-    margin-top: 7px;
-}
-@media screen and (max-width: 320px) {
-    .p{
-       font-size: 10.2px;
-    }
-}
-
-.p a{
-    text-decoration: none;
-    color: rgb(33, 125, 231);
-}
-
-.card-body{
-    padding: 20px;
-}
-
-a.rejex{
-    font-size: 37px;
 }
 
 form {
@@ -536,19 +819,53 @@ form {
     }
 }
 
+textarea{
+    resize: none;
+    height: 120px;
+}
+
+/*
+    Delete section
+*/
+
+.con-container {
+    width: 50%;
+    margin: 172.3px;
+    background: #fffefe;
+    box-shadow: 7px 7px 17px -7px rgb(145, 142, 142);
+    border-radius: 16px;
+    border: 1px solid #000;
+}
+@media screen and (max-width: 1024px) {
+    .con-container{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .con-container{
+        width: 75%;
+    }
+}
+@media screen and (max-width: 425px) {
+    .con-container{
+        width: 85%;
+    }
+}
+
+.con-p{
+    font-size: 25px;
+}
+@media screen and (max-width: 425px) {
+    .con-p{
+       font-size: 16px;
+       line-height: 1.2;
+    }
+}
+
+a.rejex{
+    font-size: 37px;
+}
+
 .button{
-    margin-top: 12px;
-}
-
-.plus{
-    margin-right: 12px;
-}
-
-.no-list{
-    padding: 25px;
-    border-top: 1px solid rgb(226, 226, 226);
-}
-
-.tsk{
-    padding: 26px;
+    margin-top: 25px;
 }

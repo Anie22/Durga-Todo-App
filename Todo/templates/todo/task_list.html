@@ -11,9 +11,23 @@
 <body>
     <div class="task-section">
         <div class="task">
-            <header class="task-header">
-                <p class="link"><a href="{% url 'home' %}">Home</a></p>
-            </header>
+            <div style="width: 100%; padding: 0px 12px;">
+                <header class="task-header">
+                    <div class="logo">Durga</div>
+                    <div class="log-bar">
+                        <div class="bar-holder none" onclick="toggle()">
+                            <div class="bar">
+                                <div class="line"></div>
+                                <div class="line"></div>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div class="log-btn" id="logToggle">
+                            <p class="link"><a href="{% url 'home' %}">Home</a></p>
+                        </div>
+                    </div>
+                </header>
+            </div>
             <div class="task-container">
                 <div class="inner-container">
                     {% block content %}
@@ -63,9 +77,10 @@
         </div>
         <footer>
             <div class="form-footer">
-                <p>&copy; 2023 Copyright coded by Aniebiet</p>
+                <p>&copy; Copyright 2023 coded by Aniebiet</p>
             </div>
         </footer>
     </div>
 </body>
+<script src="{% static './js/index.js' %}"></script>
 </html>
